@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Pallium | Construction Accountants & Business Advisory</title>
-  <meta name="description" content="Accountants built exclusively for construction businesses. Construction accounting, financial intelligence and business advisory for builders, civil contractors, trade contractors and property developers.">
+  <title>Pallium | Construction Accountants &amp; Business Advisory</title>
+  <meta name="description" content="Specialist construction accounting, financial intelligence and advisory for builders, civil contractors, major trades and property developers.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 
   <style>
     /* =========================================
-       GLOBAL DESIGN
+       GLOBAL
     ========================================= */
 
     :root {
@@ -28,14 +28,10 @@
       --text: #26343b;
       --muted: #62717a;
       --border: #e0e8eb;
-
       --heading: "Manrope", sans-serif;
       --body: "DM Sans", sans-serif;
-
       --container: 1360px;
       --gutter: clamp(22px, 5vw, 80px);
-
-      /* Header dimensions */
       --header-height: 116px;
       --header-scrolled-height: 100px;
     }
@@ -54,9 +50,9 @@
     }
 
     body {
-      font-family: var(--body);
-      color: var(--text);
       background: #fff;
+      color: var(--text);
+      font-family: var(--body);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
@@ -98,12 +94,12 @@
     }
 
     .section-title {
+      color: var(--navy);
       font-family: var(--heading);
       font-size: clamp(32px, 3.4vw, 46px);
       font-weight: 800;
       line-height: 1.17;
-      letter-spacing: -0.045em;
-      color: var(--navy);
+      letter-spacing: -.045em;
     }
 
     .section-description {
@@ -136,18 +132,20 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 10px;
       min-height: 54px;
       padding: 0 28px;
       border: 1.5px solid transparent;
       border-radius: 0;
+      font-family: var(--body);
       font-size: 14px;
       font-weight: 700;
       line-height: 1.3;
       text-align: center;
       transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease;
     }
 
     .btn-primary {
@@ -186,12 +184,24 @@
     .text-link {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      justify-content: center;
+      gap: 10px;
+      min-height: 49px;
+      padding: 0 20px;
+      border: 1.5px solid var(--blue);
+      background: transparent;
       color: var(--blue);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
-      line-height: 1.5;
-      transition: color 0.2s ease;
+      line-height: 1.4;
+      transition:
+        background .2s ease,
+        color .2s ease;
+    }
+
+    .text-link:hover {
+      background: var(--blue);
+      color: #fff;
     }
 
     .text-link svg,
@@ -205,17 +215,6 @@
       stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
-      transition: transform 0.2s ease;
-    }
-
-    .text-link:hover {
-      color: var(--blue-dark);
-    }
-
-    .text-link:hover svg,
-    .industry-card:hover .industry-link svg,
-    .hero-proof:hover .hero-proof-link svg {
-      transform: translate(3px, -3px);
     }
 
     .skip-link {
@@ -238,7 +237,7 @@
 
     .topbar {
       background: var(--navy-dark);
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255,255,255,.85);
       font-size: 12px;
     }
 
@@ -260,46 +259,25 @@
     }
 
     /* =========================================
-       HEADER — LARGER ON SCROLL + TRANSPARENCY
+       HEADER
     ========================================= */
 
     .header {
       position: sticky;
       top: 0;
       z-index: 1000;
-
-      /* Slight transparency even before scrolling */
-      background: rgba(255, 255, 255, 0.97);
-
-      /* Soft frosted-glass effect */
+      background: rgba(255,255,255,.97);
       -webkit-backdrop-filter: blur(16px);
       backdrop-filter: blur(16px);
-
-      border-bottom: 1px solid rgba(224, 232, 235, 0.85);
-
+      border-bottom: 1px solid rgba(224,232,235,.85);
       transition:
-        background 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        background .3s ease,
+        box-shadow .3s ease;
     }
 
-    /* UPDATED SCROLLED HEADER */
-
     .header.scrolled {
-      /*
-        Approximately 90% opaque:
-        slightly more transparent than the
-        original solid white header.
-      */
-      background: rgba(255, 255, 255, 0.90);
-
-      -webkit-backdrop-filter: blur(20px);
-      backdrop-filter: blur(20px);
-
-      border-bottom-color: rgba(224, 232, 235, 0.75);
-
-      box-shadow:
-        0 10px 30px rgba(16, 43, 59, 0.08);
+      background: rgba(255,255,255,.90);
+      box-shadow: 0 10px 30px rgba(16,43,59,.08);
     }
 
     .header-inner {
@@ -307,11 +285,8 @@
       align-items: center;
       gap: 30px;
       height: var(--header-height);
-
-      transition: height 0.3s ease;
+      transition: height .3s ease;
     }
-
-    /* Previously 90px; now a roomier 100px */
 
     .header.scrolled .header-inner {
       height: var(--header-scrolled-height);
@@ -323,20 +298,15 @@
       flex-shrink: 0;
     }
 
-    /* Larger logo before scrolling */
-
     .logo img {
       width: auto;
       height: 98px;
       max-width: 270px;
       object-fit: contain;
-
       transition:
-        height 0.3s ease,
-        max-width 0.3s ease;
+        height .3s ease,
+        max-width .3s ease;
     }
-
-    /* Larger logo while scrolling */
 
     .header.scrolled .logo img {
       height: 86px;
@@ -350,15 +320,16 @@
       margin-left: auto;
     }
 
-    .nav > a {
+    .nav > a:not(.nav-mobile-cta) {
       color: var(--navy);
       font-size: 14px;
       font-weight: 700;
       white-space: nowrap;
-      transition: color 0.2s ease;
+      transition: color .2s ease;
     }
 
-    .nav > a:hover {
+    .nav > a:hover,
+    .nav > a.active {
       color: var(--blue);
     }
 
@@ -386,7 +357,7 @@
       height: 48px;
       margin-left: auto;
       border: 1px solid var(--navy);
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255,255,255,.9);
     }
 
     .hamburger {
@@ -400,24 +371,27 @@
       height: 2px;
       background: var(--navy);
       transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
+        transform .2s ease,
+        opacity .2s ease;
     }
 
-    .menu-toggle[aria-expanded="true"] .hamburger span:nth-child(1) {
+    .menu-toggle[aria-expanded="true"]
+    .hamburger span:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
     }
 
-    .menu-toggle[aria-expanded="true"] .hamburger span:nth-child(2) {
+    .menu-toggle[aria-expanded="true"]
+    .hamburger span:nth-child(2) {
       opacity: 0;
     }
 
-    .menu-toggle[aria-expanded="true"] .hamburger span:nth-child(3) {
+    .menu-toggle[aria-expanded="true"]
+    .hamburger span:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
     }
 
     /* =========================================
-       01. HERO
+       HERO
     ========================================= */
 
     .hero {
@@ -446,12 +420,12 @@
 
     .hero h1 {
       max-width: 680px;
+      color: var(--navy);
       font-family: var(--heading);
       font-size: clamp(38px, 4vw, 62px);
       font-weight: 800;
       line-height: 1.075;
-      letter-spacing: -0.055em;
-      color: var(--navy);
+      letter-spacing: -.055em;
     }
 
     .hero h1 span {
@@ -487,9 +461,7 @@
     .hero-media {
       position: absolute;
       z-index: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0 0 0 auto;
       width: 45%;
       overflow: hidden;
       background: var(--navy);
@@ -502,8 +474,6 @@
       object-position: 55% center;
     }
 
-    /* Overlapping result card */
-
     .hero-proof {
       position: absolute;
       z-index: 3;
@@ -515,10 +485,10 @@
       padding: 27px 30px;
       background: var(--navy);
       color: #fff;
-      box-shadow: 0 16px 38px rgba(16, 43, 59, 0.15);
+      box-shadow: 0 16px 38px rgba(16,43,59,.15);
       transition:
-        background 0.2s ease,
-        transform 0.2s ease;
+        background .2s ease,
+        transform .2s ease;
     }
 
     .hero-proof:hover {
@@ -533,13 +503,13 @@
       font-size: 48px;
       font-weight: 800;
       line-height: 1;
-      letter-spacing: -0.055em;
+      letter-spacing: -.055em;
     }
 
     .hero-proof p {
       max-width: 240px;
       margin-top: 15px;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255,255,255,.9);
       font-size: 14px;
       line-height: 1.65;
     }
@@ -555,34 +525,25 @@
     }
 
     /* =========================================
-       02. CHALLENGES
+       CUSTOMER CHALLENGES
     ========================================= */
 
     .problems {
-      position: relative;
-      isolation: isolate;
       background-color: var(--ivory);
-
       background-image:
         linear-gradient(
           90deg,
-          rgba(250, 249, 246, 0.95) 0%,
-          rgba(250, 249, 246, 0.93) 45%,
-          rgba(250, 249, 246, 0.90) 100%
+          rgba(250,249,246,.95),
+          rgba(250,249,246,.91)
         ),
-        url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=90");
-
-      background-size: cover, cover;
-      background-position: center, center;
-      background-repeat: no-repeat;
-      background-attachment: scroll, fixed;
+        url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=85");
+      background-size: cover;
+      background-position: center;
     }
 
     .problems-layout {
       display: grid;
-      grid-template-columns:
-        minmax(0, 0.85fr)
-        minmax(0, 1.15fr);
+      grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr);
       align-items: center;
       gap: clamp(55px, 7vw, 110px);
     }
@@ -592,7 +553,6 @@
     }
 
     .problems-intro .section-title {
-      max-width: 570px;
       font-size: clamp(38px, 3.6vw, 59px);
       line-height: 1.13;
     }
@@ -611,17 +571,7 @@
 
     .problems-button {
       margin-top: 34px;
-      min-height: 54px;
-      padding: 0 30px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1.5px solid var(--navy);
-      color: var(--navy);
-    }
-
-    .problems-button:hover {
-      background: var(--navy);
-      border-color: var(--navy);
-      color: #fff;
+      background: rgba(255,255,255,.72);
     }
 
     .problem-list {
@@ -640,15 +590,7 @@
       padding: clamp(30px, 3vw, 44px);
       color: #fff;
       border-radius: 3px;
-      box-shadow: 0 13px 32px rgba(20, 45, 60, 0.1);
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-    }
-
-    .problem-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 38px rgba(20, 45, 60, 0.15);
+      box-shadow: 0 13px 32px rgba(20,45,60,.1);
     }
 
     .problem-card:nth-child(1) {
@@ -671,7 +613,7 @@
       color: #d9edf4;
       font-size: 15px;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: .06em;
     }
 
     .problem-content h3 {
@@ -681,19 +623,19 @@
       font-size: clamp(21px, 1.8vw, 28px);
       font-weight: 600;
       line-height: 1.35;
-      letter-spacing: -0.035em;
+      letter-spacing: -.035em;
     }
 
     .problem-content p {
       max-width: 540px;
       margin-top: 15px;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255,255,255,.9);
       font-size: clamp(14px, 1.1vw, 16px);
       line-height: 1.7;
     }
 
     /* =========================================
-       03. WHO WE HELP
+       WHO WE HELP
     ========================================= */
 
     .industries {
@@ -702,7 +644,7 @@
 
     .industry-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0,1fr));
       gap: 16px;
     }
 
@@ -715,22 +657,22 @@
       background: #f3f8fa;
       border: 1px solid #dce7ec;
       color: var(--navy);
-
       transition:
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
     }
 
     .industry-card:hover {
       background: #e9f3f7;
       border-color: #b8d3df;
       transform: translateY(-4px);
-      box-shadow: 0 14px 35px rgba(23, 51, 69, 0.07);
     }
 
     .industry-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 60px;
       height: 60px;
       color: var(--blue);
@@ -756,7 +698,7 @@
       font-size: clamp(19px, 1.55vw, 23px);
       font-weight: 800;
       line-height: 1.35;
-      letter-spacing: -0.035em;
+      letter-spacing: -.035em;
     }
 
     .industry-link {
@@ -770,7 +712,7 @@
     }
 
     /* =========================================
-       04. HOW WE HELP
+       HOW WE HELP — EVEN BUTTONS
     ========================================= */
 
     .services {
@@ -779,8 +721,9 @@
 
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0,1fr));
       gap: 10px;
+      align-items: stretch;
     }
 
     .service-card {
@@ -791,15 +734,14 @@
       overflow: hidden;
       background: #fff;
       border: 1px solid var(--border);
-
       transition:
-        box-shadow 0.25s ease,
-        transform 0.25s ease;
+        box-shadow .25s ease,
+        transform .25s ease;
     }
 
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 14px 35px rgba(23, 51, 69, 0.08);
+      box-shadow: 0 14px 35px rgba(23,51,69,.08);
     }
 
     .service-image {
@@ -814,25 +756,17 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      transition: transform 0.4s ease;
-    }
-
-    .service-card:hover .service-image img {
-      transform: scale(1.04);
     }
 
     .service-image::after {
       content: "";
       position: absolute;
       inset: 0;
-
       background: linear-gradient(
         180deg,
-        rgba(16, 43, 59, 0.08),
-        rgba(16, 43, 59, 0.35)
+        rgba(16,43,59,.08),
+        rgba(16,43,59,.35)
       );
-
       pointer-events: none;
     }
 
@@ -858,24 +792,46 @@
       font-size: clamp(19px, 1.5vw, 23px);
       font-weight: 800;
       line-height: 1.35;
-      letter-spacing: -0.035em;
+      letter-spacing: -.035em;
     }
 
     .service-content p {
       margin-top: 12px;
+      margin-bottom: 28px;
       color: var(--muted);
       font-size: 15px;
       line-height: 1.7;
     }
 
+    /*
+      IMPORTANT:
+      margin-top: auto pushes every button
+      to the bottom of its service card.
+    */
+
     .service-content .text-link {
       align-self: flex-start;
       margin-top: auto;
-      padding-top: 28px;
+    }
+
+    .services-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 34px;
+    }
+
+    .services-bottom p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     /* =========================================
-       05. CLIENT RESULTS
+       CLIENT RESULTS
     ========================================= */
 
     .results {
@@ -893,10 +849,10 @@
 
     .results-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 1px;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.18);
     }
 
     .result-card {
@@ -920,8 +876,8 @@
       font-family: var(--heading);
       font-size: clamp(34px, 3.3vw, 49px);
       font-weight: 800;
-      letter-spacing: -0.05em;
       line-height: 1.1;
+      letter-spacing: -.05em;
     }
 
     .result-card p {
@@ -934,8 +890,8 @@
 
     .results-bottom {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
       gap: 25px;
       margin-top: 38px;
@@ -948,7 +904,7 @@
     }
 
     /* =========================================
-       06. WHY PALLIUM
+       WHY PALLIUM
     ========================================= */
 
     .why {
@@ -973,8 +929,8 @@
     .why-visual::before {
       content: "";
       position: absolute;
-      inset: 24px 24px -24px -24px;
       z-index: -1;
+      inset: 24px 24px -24px -24px;
       background: var(--blue);
     }
 
@@ -982,7 +938,6 @@
       width: 100%;
       height: clamp(380px, 36vw, 490px);
       object-fit: cover;
-      object-position: center;
     }
 
     .why-content {
@@ -1002,7 +957,7 @@
 
     .why-points {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0,1fr));
       column-gap: 30px;
       row-gap: 25px;
       margin-top: 35px;
@@ -1012,7 +967,6 @@
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      min-width: 0;
       color: var(--navy);
       font-size: 14px;
       font-weight: 700;
@@ -1020,24 +974,15 @@
     }
 
     .why-check {
-      display: flex;
+      display: inline-flex;
+      flex: 0 0 20px;
       align-items: center;
       justify-content: center;
       width: 20px;
       height: 20px;
-      flex: 0 0 20px;
-      margin-top: 1px;
       color: var(--blue);
-    }
-
-    .why-check svg {
-      width: 20px;
-      height: 20px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      font-size: 20px;
+      line-height: 1;
     }
 
     .why-content .btn {
@@ -1045,11 +990,10 @@
     }
 
     /* =========================================
-       07. FINAL CTA WITH OVERLAPPING PHOTO
+       FINAL CTA
     ========================================= */
 
     .final-cta {
-      position: relative;
       padding-top: clamp(120px, 11vw, 170px);
       padding-bottom: clamp(76px, 8vw, 116px);
       background: var(--ivory);
@@ -1062,7 +1006,6 @@
       min-height: 385px;
       padding: clamp(45px, 6vw, 78px);
       background: var(--navy);
-      overflow: visible;
       isolation: isolate;
     }
 
@@ -1080,7 +1023,7 @@
       font-size: clamp(30px, 3vw, 44px);
       font-weight: 800;
       line-height: 1.18;
-      letter-spacing: -0.045em;
+      letter-spacing: -.045em;
     }
 
     .final-cta p {
@@ -1106,10 +1049,8 @@
       object-fit: contain;
       object-position: bottom center;
       pointer-events: none;
-      user-select: none;
-
       filter: drop-shadow(
-        -12px 8px 22px rgba(9, 31, 43, 0.12)
+        -12px 8px 22px rgba(9,31,43,.12)
       );
     }
 
@@ -1125,7 +1066,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.5fr repeat(3, 1fr);
+      grid-template-columns: 1.5fr repeat(3,1fr);
       gap: clamp(30px, 5vw, 70px);
     }
 
@@ -1134,8 +1075,8 @@
       height: 72px;
       max-width: 200px;
       object-fit: contain;
-      background: #fff;
       padding: 6px;
+      background: #fff;
     }
 
     .footer-about {
@@ -1172,32 +1113,29 @@
       gap: 15px;
       margin-top: 60px;
       padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.13);
+      border-top: 1px solid rgba(255,255,255,.13);
       color: #9fb1bb;
       font-size: 12px;
     }
 
     /* =========================================
-       MOBILE STICKY CTA
+       MOBILE BOOKING BAR
     ========================================= */
 
     .mobile-cta {
       display: none;
       position: fixed;
+      z-index: 900;
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 900;
-
       padding:
         12px 18px
         calc(12px + env(safe-area-inset-bottom, 0px));
-
       background: #fff;
       border-top: 1px solid var(--border);
-      box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.08);
-
-      transition: transform 0.25s ease;
+      box-shadow: 0 -6px 24px rgba(0,0,0,.08);
+      transition: transform .25s ease;
     }
 
     .mobile-cta .btn {
@@ -1209,7 +1147,7 @@
     }
 
     /* =========================================
-       LAPTOP
+       RESPONSIVE
     ========================================= */
 
     @media (max-width: 1380px) {
@@ -1225,15 +1163,7 @@
         padding-inline: 18px;
         font-size: 13px;
       }
-
-      .service-content {
-        padding: 26px 23px;
-      }
     }
-
-    /* =========================================
-       TABLET
-    ========================================= */
 
     @media (max-width: 1200px) {
       :root {
@@ -1270,11 +1200,9 @@
         gap: 0;
         margin: 0;
         padding: 14px var(--gutter) 28px;
-        background: rgba(255, 255, 255, 0.97);
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
+        background: rgba(255,255,255,.97);
         border-bottom: 1px solid var(--border);
-        box-shadow: 0 18px 28px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 18px 28px rgba(0,0,0,.08);
         max-height: calc(100svh - 100px);
         overflow-y: auto;
       }
@@ -1283,7 +1211,7 @@
         display: flex;
       }
 
-      .nav > a {
+      .nav > a:not(.nav-mobile-cta) {
         padding: 17px 0;
         border-bottom: 1px solid var(--border);
         font-size: 16px;
@@ -1293,19 +1221,13 @@
         display: flex;
         margin-top: 18px;
         padding: 16px;
-        border: 0;
         background: var(--blue);
-        color: #fff;
-      }
-
-      .nav .nav-mobile-cta:hover {
-        background: var(--blue-dark);
         color: #fff;
       }
 
       .industry-grid,
       .service-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0,1fr));
       }
 
       .service-grid {
@@ -1320,19 +1242,10 @@
         padding: 32px;
       }
 
-      .final-cta-content {
-        width: 65%;
-      }
-
-      .final-cta-person {
-        right: 1%;
-        width: 41%;
+      .footer-grid {
+        grid-template-columns: repeat(2,1fr);
       }
     }
-
-    /* =========================================
-       SMALL TABLET
-    ========================================= */
 
     @media (max-width: 960px) {
       .hero,
@@ -1348,10 +1261,6 @@
         padding: 60px 0 55px;
       }
 
-      .hero h1 {
-        max-width: 760px;
-      }
-
       .hero-media {
         position: relative;
         width: 100%;
@@ -1361,17 +1270,12 @@
       .hero-proof {
         left: var(--gutter);
         bottom: 28px;
-        width: 300px;
       }
 
       .problems-layout,
       .why-layout {
         grid-template-columns: 1fr;
         gap: 55px;
-      }
-
-      .problems-intro {
-        max-width: 720px;
       }
 
       .problem-list {
@@ -1404,19 +1308,6 @@
         height: 430px;
       }
 
-      .why-content {
-        max-width: 740px;
-      }
-
-      .final-cta {
-        padding-top: 100px;
-      }
-
-      .final-cta-inner {
-        min-height: 360px;
-        padding: 45px;
-      }
-
       .final-cta-content {
         width: 63%;
       }
@@ -1424,32 +1315,8 @@
       .final-cta-person {
         right: 0;
         width: 42%;
-        max-height: 450px;
-      }
-
-      .final-cta h2 {
-        font-size: clamp(28px, 3.5vw, 37px);
-      }
-
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
       }
     }
-
-    /* =========================================
-       MOBILE PARALLAX FALLBACK
-    ========================================= */
-
-    @media (max-width: 767px) {
-      .problems {
-        background-attachment: scroll, scroll;
-        background-position: center, center bottom;
-      }
-    }
-
-    /* =========================================
-       MOBILE
-    ========================================= */
 
     @media (max-width: 650px) {
       :root {
@@ -1462,9 +1329,8 @@
       }
 
       body {
-        padding-bottom: calc(
-          80px + env(safe-area-inset-bottom, 0px)
-        );
+        padding-bottom:
+          calc(80px + env(safe-area-inset-bottom, 0px));
       }
 
       .topbar {
@@ -1479,6 +1345,14 @@
       .header.scrolled .logo img {
         height: 67px;
         max-width: 190px;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .section-title {
+        font-size: clamp(30px, 8vw, 39px);
       }
 
       .hero-content {
@@ -1503,10 +1377,6 @@
         width: 100%;
       }
 
-      .hero-note {
-        margin-top: 25px;
-      }
-
       .hero-media {
         height: 340px;
       }
@@ -1520,14 +1390,6 @@
 
       .hero-proof strong {
         font-size: 39px;
-      }
-
-      .section {
-        padding: 72px 0;
-      }
-
-      .section-title {
-        font-size: clamp(30px, 8vw, 39px);
       }
 
       .problems-layout {
@@ -1556,23 +1418,13 @@
         grid-template-columns: 1fr;
         gap: 20px;
         min-height: 0;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         padding: 30px 26px;
-      }
-
-      .problem-card:nth-child(1),
-      .problem-card:nth-child(2),
-      .problem-card:nth-child(3) {
-        margin-left: 0;
-        margin-right: 0;
       }
 
       .problem-content h3 {
         font-size: 22px;
-      }
-
-      .problem-content p {
-        margin-top: 12px;
-        font-size: 15px;
       }
 
       .industry-grid,
@@ -1583,15 +1435,6 @@
       .industry-card {
         min-height: 235px;
         padding: 28px;
-      }
-
-      .industry-icon {
-        width: 54px;
-        height: 54px;
-      }
-
-      .industry-body {
-        margin-top: 34px;
       }
 
       .service-grid {
@@ -1611,16 +1454,9 @@
         font-size: 22px;
       }
 
-      .service-content p {
-        font-size: 15px;
-      }
-
-      .service-content .text-link {
-        padding-top: 24px;
-      }
-
-      .why-layout {
-        gap: 48px;
+      .service-content .text-link,
+      .services-bottom .btn {
+        width: 100%;
       }
 
       .why-visual {
@@ -1636,19 +1472,9 @@
         height: 310px;
       }
 
-      .why-content .section-title {
-        font-size: clamp(32px, 8vw, 40px);
-      }
-
-      .why-content .section-description {
-        margin-top: 20px;
-        font-size: 15px;
-      }
-
       .why-points {
         grid-template-columns: 1fr;
         gap: 18px;
-        margin-top: 28px;
       }
 
       .why-content .btn {
@@ -1656,8 +1482,7 @@
       }
 
       .final-cta {
-        padding-top: 72px;
-        padding-bottom: 72px;
+        padding: 72px 0;
       }
 
       .final-cta-inner {
@@ -1667,23 +1492,18 @@
 
       .final-cta-content {
         width: 100%;
-        max-width: none;
       }
 
       .final-cta h2 {
         font-size: clamp(29px, 8vw, 37px);
       }
 
-      .final-cta p {
-        font-size: 15px;
+      .final-cta-person {
+        display: none;
       }
 
       .final-cta .btn {
         width: 100%;
-      }
-
-      .final-cta-person {
-        display: none;
       }
 
       .footer-grid {
@@ -1696,24 +1516,16 @@
       }
     }
 
-    /* =========================================
-       REDUCED MOTION
-    ========================================= */
-
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
       }
 
-      .problems {
-        background-attachment: scroll, scroll;
-      }
-
       *,
       *::before,
       *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
       }
     }
   </style>
@@ -1723,10 +1535,7 @@
 
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- =========================================
-       TOP BAR
-  ========================================= -->
-
+  <!-- TOP BAR -->
   <div class="topbar">
     <div class="container topbar-inner">
       <span>
@@ -1734,22 +1543,18 @@
       </span>
 
       <div class="topbar-links">
-        <!-- Replace with Pallium's actual contact details -->
-        <a href="tel:+61000000000">Call us</a>
-        <a href="mailto:hello@example.com">hello@example.com</a>
+        <a href="insights.html">Insights</a>
+        <a href="/contact">Contact Us</a>
       </div>
     </div>
   </div>
 
-  <!-- =========================================
-       HEADER
-  ========================================= -->
-
+  <!-- HEADER -->
   <header class="header" id="site-header">
     <div class="container header-inner">
 
       <a
-        href="#home"
+        href="index.html"
         class="logo"
         aria-label="Pallium Construction Accountants home"
       >
@@ -1762,16 +1567,14 @@
       </a>
 
       <nav class="nav" id="main-nav" aria-label="Main navigation">
-        <a href="#industries">Who We Help</a>
-        <a href="#services">How We Help</a>
-        <a href="#results">Client Stories</a>
-        <a href="#why-pallium">Why Pallium</a>
-        <a href="/insights">Insights</a>
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="who-we-help.html">Who We Help</a>
+        <a href="how-we-help.html">How We Help</a>
+        <a href="why-pallium.html">Why Pallium</a>
+        <a href="client-stories.html">Client Stories</a>
+        <a href="insights.html">Insights</a>
 
-        <a
-          href="/discovery-meeting"
-          class="btn btn-primary nav-mobile-cta"
-        >
+        <a href="/discovery-meeting" class="btn btn-primary nav-mobile-cta">
           Book a Discovery Meeting
         </a>
       </nav>
@@ -1789,7 +1592,7 @@
         aria-controls="main-nav"
         aria-expanded="false"
       >
-        <span class="hamburger">
+        <span class="hamburger" aria-hidden="true">
           <span></span>
           <span></span>
           <span></span>
@@ -1801,10 +1604,7 @@
 
   <main id="main">
 
-    <!-- =========================================
-         01. HERO
-    ========================================= -->
-
+    <!-- HERO -->
     <section class="hero" id="home">
 
       <div class="container hero-grid">
@@ -1816,9 +1616,10 @@
           </h1>
 
           <p class="hero-description">
-            We help builders, civil contractors, major trade contractors
-            and property developers improve profit, strengthen cash flow
-            and gain greater financial control.
+            For established builders, civil contractors,
+            major trades and property developers ready
+            to improve profit, cash flow and financial
+            control — and make better commercial decisions.
           </p>
 
           <div class="hero-actions">
@@ -1831,7 +1632,6 @@
             </a>
           </div>
 
-          <!-- Confirm the turnover range before publishing -->
           <p class="hero-note">
             For established and growing construction businesses
             turning over $3M to $50M+.
@@ -1848,18 +1648,13 @@
         >
       </div>
 
-      <!-- Confirm client result and approval before publishing -->
-
       <a href="#results" class="hero-proof">
         <strong>4×+</strong>
 
-        <p>
-          Turnover growth for a construction client.
-        </p>
+        <p>Turnover growth for a construction client.</p>
 
         <span class="hero-proof-link">
           Read the client story
-
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 19 19 5M8 5h11v11"/>
           </svg>
@@ -1868,14 +1663,12 @@
 
     </section>
 
-    <!-- =========================================
-         02. CHALLENGES
-    ========================================= -->
-
+    <!-- CUSTOMER CHALLENGES -->
     <section class="section problems" id="problems">
       <div class="container problems-layout">
 
         <div class="problems-intro">
+
           <h2 class="section-title">
             More turnover.<br>
             But are you making
@@ -1883,14 +1676,17 @@
           </h2>
 
           <p class="section-description">
-            Construction businesses need more than historical
-            accounting. We help you understand the numbers behind
-            your profit, projects and cash flow.
+            Making profit but short on cash?
+            Unsure which projects are performing?
+            We help you understand the numbers
+            behind your projects, working capital
+            and business growth.
           </p>
 
           <a href="#services" class="btn btn-outline problems-button">
             See How We Help
           </a>
+
         </div>
 
         <div class="problem-list">
@@ -1899,11 +1695,15 @@
             <span class="problem-number">01</span>
 
             <div class="problem-content">
-              <h3>Making profit, but struggling with cash flow?</h3>
+              <h3>
+                Making profit, but struggling
+                with cash flow?
+              </h3>
 
               <p>
-                Healthy turnover doesn't always mean healthy cash flow.
-                Understand where your money is tied up.
+                Healthy turnover doesn't always mean
+                healthy cash flow. Understand where
+                your money is tied up.
               </p>
             </div>
           </article>
@@ -1912,11 +1712,15 @@
             <span class="problem-number">02</span>
 
             <div class="problem-content">
-              <h3>Unsure which projects are actually profitable?</h3>
+              <h3>
+                Unsure which projects are
+                actually profitable?
+              </h3>
 
               <p>
-                Get clear visibility into project performance and
-                understand which jobs drive your profit.
+                Get clear visibility into project
+                performance and understand which
+                jobs drive your profit.
               </p>
             </div>
           </article>
@@ -1926,41 +1730,39 @@
 
             <div class="problem-content">
               <h3>
-                Growing turnover without greater financial control?
+                Growing turnover, but not
+                seeing stronger margins?
               </h3>
 
               <p>
-                Gain the financial insight you need to grow
-                with confidence and protect your margins.
+                See how labour, overheads, WIP and
+                retentions affect your financial position.
               </p>
             </div>
           </article>
 
         </div>
+
       </div>
     </section>
 
-    <!-- =========================================
-         03. WHO WE HELP — ICON CARDS
-    ========================================= -->
-
+    <!-- WHO WE HELP -->
     <section class="section industries" id="industries">
       <div class="container">
 
         <div class="section-heading">
           <h2 class="section-title">
-            Built for construction. Not every industry.
+            Built for construction.
+            Not every industry.
           </h2>
 
           <p class="section-description">
-            Specialist accounting and advisory for established
-            and growing construction businesses.
+            Specialist accounting and advisory for
+            established and growing construction businesses.
           </p>
         </div>
 
         <div class="industry-grid">
-
-          <!-- BUILDERS -->
 
           <a href="/builders" class="industry-card">
             <div class="industry-icon" aria-hidden="true">
@@ -1977,15 +1779,12 @@
 
               <span class="industry-link">
                 Explore Builders
-
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 19 19 5M8 5h11v11"/>
                 </svg>
               </span>
             </div>
           </a>
-
-          <!-- CIVIL CONTRACTORS -->
 
           <a href="/civil-contractors" class="industry-card">
             <div class="industry-icon" aria-hidden="true">
@@ -2003,15 +1802,12 @@
 
               <span class="industry-link">
                 Explore Civil Contractors
-
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 19 19 5M8 5h11v11"/>
                 </svg>
               </span>
             </div>
           </a>
-
-          <!-- MAJOR TRADE CONTRACTORS -->
 
           <a href="/trade-contractors" class="industry-card">
             <div class="industry-icon" aria-hidden="true">
@@ -2029,15 +1825,12 @@
 
               <span class="industry-link">
                 Explore Major Trades
-
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 19 19 5M8 5h11v11"/>
                 </svg>
               </span>
             </div>
           </a>
-
-          <!-- PROPERTY DEVELOPERS -->
 
           <a href="/property-developers" class="industry-card">
             <div class="industry-icon" aria-hidden="true">
@@ -2055,7 +1848,6 @@
 
               <span class="industry-link">
                 Explore Property Developers
-
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 19 19 5M8 5h11v11"/>
                 </svg>
@@ -2064,13 +1856,11 @@
           </a>
 
         </div>
+
       </div>
     </section>
 
-    <!-- =========================================
-         04. HOW WE HELP — PHOTO SERVICES
-    ========================================= -->
-
+    <!-- HOW WE HELP -->
     <section class="section services" id="services">
       <div class="container">
 
@@ -2081,16 +1871,17 @@
           </h2>
 
           <p class="section-description">
-            From accounting and financial intelligence
-            to proactive advisory and wealth protection.
+            Get the numbers right. Understand them.
+            Make better decisions. Build and protect
+            what you've earned.
           </p>
         </div>
 
         <div class="service-grid">
 
-          <!-- ACCOUNTING -->
-
+          <!-- SERVICE 01 -->
           <article class="service-card">
+
             <div class="service-image">
               <img
                 src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85"
@@ -2101,26 +1892,28 @@
 
             <div class="service-content">
               <span class="service-number">01</span>
+
               <h3>Accounting &amp; Compliance</h3>
 
               <p>
                 Get the numbers right with construction-specific
-                accounting and financial reporting.
+                accounting, tax compliance and reliable reporting.
               </p>
 
               <a href="/construction-accounting" class="text-link">
-                Explore service
+                Explore Service
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 19 19 5M8 5h11v11"/>
                 </svg>
               </a>
             </div>
+
           </article>
 
-          <!-- FINANCIAL INTELLIGENCE -->
-
+          <!-- SERVICE 02 -->
           <article class="service-card">
+
             <div class="service-image">
               <img
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85"
@@ -2131,26 +1924,29 @@
 
             <div class="service-content">
               <span class="service-number">02</span>
+
               <h3>Financial Intelligence</h3>
 
               <p>
-                Understand your profit, project performance,
-                WIP and cash flow.
+                Understand where you make or lose money
+                across projects, WIP, debtors,
+                retentions and cash flow.
               </p>
 
               <a href="/financial-intelligence" class="text-link">
-                Explore service
+                Explore Service
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 19 19 5M8 5h11v11"/>
                 </svg>
               </a>
             </div>
+
           </article>
 
-          <!-- BUSINESS ADVISORY -->
-
+          <!-- SERVICE 03 -->
           <article class="service-card">
+
             <div class="service-image">
               <img
                 src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=85"
@@ -2161,26 +1957,29 @@
 
             <div class="service-content">
               <span class="service-number">03</span>
+
               <h3>Business Advisory</h3>
 
               <p>
-                Practical commercial advice and CFO support
-                to help you make informed decisions.
+                Use financial insight, commercial
+                advice and CFO support to make
+                better business decisions.
               </p>
 
               <a href="/business-advisory" class="text-link">
-                Explore service
+                Explore Service
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 19 19 5M8 5h11v11"/>
                 </svg>
               </a>
             </div>
+
           </article>
 
-          <!-- TAX PLANNING -->
-
+          <!-- SERVICE 04 -->
           <article class="service-card">
+
             <div class="service-image">
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=85"
@@ -2191,31 +1990,43 @@
 
             <div class="service-content">
               <span class="service-number">04</span>
+
               <h3>Tax Planning &amp; Protection</h3>
 
               <p>
-                Plan proactively, legally minimise tax
-                and protect what you build.
+                Pay the tax you're legally required to
+                pay — not more than you need to. Plan
+                ahead and protect what you've built.
               </p>
 
               <a href="/tax-planning" class="text-link">
-                Explore service
+                Explore Service
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 19 19 5M8 5h11v11"/>
                 </svg>
               </a>
             </div>
+
           </article>
 
         </div>
+
+        <div class="services-bottom">
+          <p>
+            Explore our full range of construction
+            accounting and advisory services.
+          </p>
+
+          <a href="how-we-help.html" class="btn btn-outline">
+            View All Services
+          </a>
+        </div>
+
       </div>
     </section>
 
-    <!-- =========================================
-         05. CLIENT RESULTS
-    ========================================= -->
-
+    <!-- CLIENT RESULTS -->
     <section class="section results" id="results">
       <div class="container">
 
@@ -2225,12 +2036,10 @@
           </h2>
 
           <p class="section-description">
-            See how practical financial advice translates
-            into measurable business outcomes.
+            Real examples from builders and contractors.
+            Full case studies are subject to client approval.
           </p>
         </div>
-
-        <!-- Confirm results and client approval before publishing -->
 
         <div class="results-grid">
 
@@ -2256,14 +2065,12 @@
           </article>
 
           <article class="result-card">
-            <span class="result-sector">
-              Plumbing Contractor
-            </span>
+            <span class="result-sector">Plumbing Contractor</span>
 
             <strong class="result-stat">$1,000s</strong>
 
             <p>
-              Labour analysis identified potential savings
+              Labour analysis identified savings
               of thousands of dollars per week.
             </p>
           </article>
@@ -2276,7 +2083,7 @@
             behind our client stories.
           </p>
 
-          <a href="/client-stories" class="btn btn-white">
+          <a href="client-stories.html" class="btn btn-white">
             View Client Stories
           </a>
         </div>
@@ -2284,10 +2091,7 @@
       </div>
     </section>
 
-    <!-- =========================================
-         06. WHY PALLIUM
-    ========================================= -->
-
+    <!-- WHY PALLIUM -->
     <section class="section why" id="why-pallium">
       <div class="container why-layout">
 
@@ -2305,90 +2109,67 @@
           </h2>
 
           <p class="section-description">
-            We combine construction-specific financial knowledge
-            with commercial understanding and proactive advice
-            to help you build a stronger business.
+            We combine construction-specific financial
+            knowledge with commercial understanding
+            and proactive advice to help you grow
+            profitably, plan tax and protect the
+            business and wealth you've built.
           </p>
 
           <div class="why-points">
 
             <div class="why-point">
-              <span class="why-check" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 12.5 9.5 18 20 6"/>
-                </svg>
-              </span>
-
+              <span class="why-check" aria-hidden="true">✓</span>
               <span>Construction-only specialisation</span>
             </div>
 
             <div class="why-point">
-              <span class="why-check" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 12.5 9.5 18 20 6"/>
-                </svg>
-              </span>
-
+              <span class="why-check" aria-hidden="true">✓</span>
               <span>Commercial understanding</span>
             </div>
 
             <div class="why-point">
-              <span class="why-check" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 12.5 9.5 18 20 6"/>
-                </svg>
-              </span>
-
+              <span class="why-check" aria-hidden="true">✓</span>
               <span>Proactive financial advice</span>
             </div>
 
             <div class="why-point">
-              <span class="why-check" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 12.5 9.5 18 20 6"/>
-                </svg>
-              </span>
-
-              <span>
-                Construction-specific financial knowledge
-              </span>
+              <span class="why-check" aria-hidden="true">✓</span>
+              <span>Construction-specific financial knowledge</span>
             </div>
 
           </div>
 
-          <a href="/why-pallium" class="btn btn-primary">
+          <a href="why-pal.html" class="btn btn-primary">
             Discover Why Pallium
           </a>
 
         </div>
+
       </div>
     </section>
 
-    <!-- =========================================
-         07. FINAL CTA — cta-pal.png
-    ========================================= -->
-
+    <!-- FINAL CTA -->
     <section class="final-cta" id="contact">
       <div class="container">
 
         <div class="final-cta-inner">
 
           <div class="final-cta-content">
-
             <h2>
               Build a more profitable,
               financially stronger business.
             </h2>
 
             <p>
-              Get the financial clarity and commercial advice
-              you need to take your construction business forward.
+              Get the financial clarity and commercial
+              advice you need to take your construction
+              business forward.
             </p>
 
             <a href="/discovery-meeting" class="btn btn-white">
               Book a Discovery Meeting
             </a>
-
           </div>
 
           <img
@@ -2405,17 +2186,14 @@
 
   </main>
 
-  <!-- =========================================
-       FOOTER
-  ========================================= -->
-
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
 
       <div class="footer-grid">
 
         <div>
-          <a href="#home" aria-label="Pallium home">
+          <a href="index.html" aria-label="Pallium home">
             <img
               src="pal-logo.png"
               class="footer-logo"
@@ -2446,10 +2224,11 @@
           <h4>How We Help</h4>
 
           <ul>
-            <li><a href="/construction-accounting">Accounting</a></li>
+            <li><a href="how-we-help.html">All Services</a></li>
+            <li><a href="/construction-accounting">Construction Accounting &amp; Tax</a></li>
             <li><a href="/financial-intelligence">Financial Intelligence</a></li>
             <li><a href="/business-advisory">Business Advisory</a></li>
-            <li><a href="/tax-planning">Tax Planning</a></li>
+            <li><a href="/tax-planning">Tax Planning &amp; Protection</a></li>
           </ul>
         </div>
 
@@ -2457,9 +2236,9 @@
           <h4>Pallium</h4>
 
           <ul>
-            <li><a href="/why-pallium">Why Pallium</a></li>
-            <li><a href="/client-stories">Client Stories</a></li>
-            <li><a href="/insights">Insights</a></li>
+            <li><a href="why-pal.html">Why Pallium</a></li>
+            <li><a href="client-stories.html">Client Stories</a></li>
+            <li><a href="insights.html">Insights</a></li>
             <li><a href="/discovery-meeting">Book a Meeting</a></li>
           </ul>
         </div>
@@ -2481,22 +2260,16 @@
     </div>
   </footer>
 
-  <!-- =========================================
-       MOBILE BOOKING BUTTON
-  ========================================= -->
-
+  <!-- MOBILE BOOKING BAR -->
   <div class="mobile-cta" id="mobile-cta">
     <a href="/discovery-meeting" class="btn btn-primary">
       Book a Discovery Meeting
     </a>
   </div>
 
-  <!-- =========================================
-       JAVASCRIPT
-  ========================================= -->
-
+  <!-- JAVASCRIPT -->
   <script>
-    // Sticky header
+    /* Sticky header */
 
     const header = document.getElementById("site-header");
 
@@ -2515,15 +2288,23 @@
 
     updateHeader();
 
-    // Mobile navigation
+    /* Mobile navigation */
 
     const menuToggle = document.querySelector(".menu-toggle");
     const mainNav = document.getElementById("main-nav");
 
     function closeMenu() {
       mainNav.classList.remove("is-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open menu");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        "Open menu"
+      );
     }
 
     menuToggle.addEventListener("click", function () {
@@ -2556,7 +2337,7 @@
       }
     });
 
-    // Hide mobile booking bar when final CTA is visible
+    /* Hide mobile booking bar at final CTA */
 
     const mobileCTA = document.getElementById("mobile-cta");
     const finalCTA = document.getElementById("contact");
@@ -2577,7 +2358,7 @@
       ctaObserver.observe(finalCTA);
     }
 
-    // Copyright year
+    /* Copyright year */
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
